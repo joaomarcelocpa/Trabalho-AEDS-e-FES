@@ -41,7 +41,7 @@ typedef struct {
     int numeroQuarto;
 } Estadia;
 
-// Funções para manipulação de arquivos
+// FunÃ§Ãµes para manipulaÃ§Ã£o de arquivos
 
 void inicializarArquivos() {
     FILE *fp;
@@ -67,7 +67,7 @@ void inicializarArquivos() {
     if (fileSize == 0) {
         Quarto quartos[NUM_QUARTOS];
 
-        // Inicializar os quartos com as especificações fornecidas
+        // Inicializar os quartos com as especificaÃ§Ãµes fornecidas
         int numeroQuarto = 1;
         for (int i = 0; i < NUM_QUARTOS; i++) {
             if (i < 5) {
@@ -99,6 +99,7 @@ void inicializarArquivos() {
     fclose(fp);
 }
 
+// Inicializa os arquivos que salvam os dados
 int salvarClientes(Cliente clientes[], int n) {
     FILE *fp;
     fp = fopen(FILE_CLIENTES, "wb");
@@ -223,7 +224,7 @@ int lerQuartos(Quarto quartos[]) {
     return n;
 }
 
-// Funções auxiliares
+// FunÃ§Ã£o para calcular a quantidade de diÃ¡rias
 
 int calcularDiasEntreDatas(const char dataInicio[], const char dataFim[]) {
     struct tm tmInicio = {0};
@@ -232,7 +233,7 @@ int calcularDiasEntreDatas(const char dataInicio[], const char dataFim[]) {
     sscanf(dataInicio, "%d/%d/%d", &tmInicio.tm_mday, &tmInicio.tm_mon, &tmInicio.tm_year);
     sscanf(dataFim, "%d/%d/%d", &tmFim.tm_mday, &tmFim.tm_mon, &tmFim.tm_year);
 
-    tmInicio.tm_mon -= 1; // Ajuste do mês para o formato correto
+    tmInicio.tm_mon -= 1; // Ajuste do mÃªs para o formato correto
     tmFim.tm_mon -= 1;
     tmInicio.tm_year -= 1900; // Ajuste do ano para o formato correto
     tmFim.tm_year -= 1900;
@@ -250,8 +251,9 @@ void atualizarQuartos(Quarto quartos[], int n) {
     salvarQuartos(quartos, n);
 }
 
-// Funções principais do programa
+// FunÃ§Ãµes principais do programa
 
+// Cadastro de clientes
 void cadastrarCliente() {
     Cliente cliente;
     Cliente clientes[MAX_LEN];
@@ -284,6 +286,7 @@ void cadastrarCliente() {
     }
 }
 
+// Cadastro de funcionÃ¡rios
 void cadastrarFuncionario() {
     Funcionario funcionario;
     Funcionario funcionarios[MAX_LEN];
@@ -318,6 +321,7 @@ void cadastrarFuncionario() {
     }
 }
 
+// Cadastro de estadia
 void cadastrarEstadia() {
     Estadia estadia;
     Estadia estadias[MAX_LEN];
@@ -366,7 +370,7 @@ void cadastrarEstadia() {
     int tipoQuarto;
     scanf("%d", &tipoQuarto);
 
-    // Verificar se há quartos disponíveis do tipo escolhido
+    // Verificar se hÃ¡ quartos disponÃ­veis do tipo escolhido
     int quartoEncontrado = 0;
     for (int i = 0; i < qtdQuartos; i++) {
         if (quartos[i].capacidade == tipoQuarto && strcmp(quartos[i].status, "desocupado") == 0) {
@@ -382,7 +386,7 @@ void cadastrarEstadia() {
         return;
     }
 
-    // Calcular quantidade de diárias
+    // Calcular quantidade de diÃ¡rias
     estadia.qtdDiarias = calcularDiasEntreDatas(estadia.dataEntrada, estadia.dataSaida);
 
     estadias[qtdEstadias] = estadia;
@@ -398,6 +402,7 @@ void cadastrarEstadia() {
     atualizarQuartos(quartos, qtdQuartos);
 }
 
+// Finaliza a estadia
 void darBaixaEstadia() {
     int codigoEstadia;
     Estadia estadias[MAX_LEN];
@@ -447,6 +452,7 @@ void darBaixaEstadia() {
     printf("Estadia nao encontrada!\n");
 }
 
+// Pesquisa de clientes
 void pesquisarCliente() {
     int codigo;
     Cliente clientes[MAX_LEN];
@@ -468,6 +474,7 @@ void pesquisarCliente() {
     printf("Cliente nao encontrado!\n");
 }
 
+// Pesquisa de funcionÃ¡rios
 void pesquisarFuncionario() {
     int codigo;
     Funcionario funcionarios[MAX_LEN];
@@ -490,10 +497,13 @@ void pesquisarFuncionario() {
     printf("Funcionario nao encontrado!\n");
 }
 
+// Visualiza as estadias dos clientes cadastrados
 void verEstadiasCliente() {
     int codigoCliente;
     Estadia estadias[MAX_LEN];
     int qtdEstadias = lerEstadias(estadias);
+    Cliente clientes[MAX_LEN];
+    int qtdClientes = lerClientes(clientes);
 
     printf("Codigo do cliente: ");
     scanf("%d", &codigoCliente);
@@ -502,7 +512,16 @@ void verEstadiasCliente() {
     for (int i = 0; i < qtdEstadias; i++) {
         if (estadias[i].codigoCliente == codigoCliente) {
             if (!estadiaEncontrada) {
-                printf("Estadias do cliente %d:\n", codigoCliente);
+                // Buscar o nome do cliente
+                char nomeCliente[MAX_LEN];
+                for (int j = 0; j < qtdClientes; j++) {
+                    if (clientes[j].codigo == codigoCliente) {
+                        strcpy(nomeCliente, clientes[j].nome);
+                        break;
+                    }
+                }
+
+                printf("Estadias do cliente %d (%s):\n", codigoCliente, nomeCliente);
                 estadiaEncontrada = 1;
             }
             printf("Codigo da Estadia: %d\n", estadias[i].codigoEstadia);
@@ -519,13 +538,14 @@ void verEstadiasCliente() {
     }
 }
 
+// Inicializa o programa
 int main() {
     int opcao;
 
     inicializarArquivos();
 
     do {
-        printf("\n--Sistema de Gestao do Hotel Descanso Total--\n");
+        printf("\n--Sistema de Gestao do Hotel Descanso Garantido--\n");
         printf("1. Cadastrar Cliente\n");
         printf("2. Cadastrar Funcionario\n");
         printf("3. Pesquisar Cliente\n");
@@ -569,6 +589,6 @@ int main() {
     } while (opcao != 8);
 
     return 0;
-}
+} 
 
 
