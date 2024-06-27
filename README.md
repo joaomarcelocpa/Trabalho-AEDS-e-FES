@@ -1,12 +1,32 @@
 # Trabalho Interdisciplinar AEDS e Fundamentos da Engenharia de Software
-# -- Hotel Descanso Garantido --
+
+# ㅤㅤㅤㅤㅤㅤㅤㅤㅤHotel Descanso Garantido 
  
 
 
 # Sumário
+- [Apresentação](#Apresentação)
+- [Backlog do prodruto](#Backlog)
 - [Funções](#Funções)
 - [Testes](#Testes)
 - [Desenvolvedores](#Desenvolvedores)
+
+
+# Apresentação 
+Esse é o software de gestão hoteleira "Descanso Garantido", o seu objetivo parte da ideia de facilitar a gestão de um hotel, uma vez que ele faz seus controles de estadias, clientes e funcionários em planilhas do
+excel e cadernos, o que tem gerado diversos problemas para a organização, sem falar que muitas vezes um mesmo quarto é reservado para mais de um cliente. Diante disso, nosso software, visando atender bem os clientes, permitirá o
+cadastro de clientes e funcionários, além de cadastrar e baixar estadias, e ainda permitir consultas. A importância do "Descanso Garantido" reside em sua capacidade de simplificar a administração do hotel, reduzindo a carga de trabalho manual, 
+aumentando a eficiência operacional e melhorando a experiência dos hóspedes.
+
+
+# Backlog do produto 
+A Figuras apresentam o quadro criado no Trello com as divisões dos quadros. O quadro “Backlog
+geral” mostrará as divisões das funções entre os integrantes e quais tarefas deverão ser entregues por
+cada integrante por ordem de sprints. Os demais quadros são os backlogs de cada integrante, uma vez
+que cada um ficou responsável por uma função do sistema.
+
+![kanban1](https://github.com/joaomarcelocpa/Trabalho-AEDS-e-FES/assets/162399153/88a577b4-69fe-4d05-ae2c-6897653bc559)
+![kanban2](https://github.com/joaomarcelocpa/Trabalho-AEDS-e-FES/assets/162399153/d68d7a2c-9def-478e-9d6d-a4d7a5ff2d21)
 
 
 # Funções
