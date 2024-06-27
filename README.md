@@ -1,5 +1,5 @@
 # Trabalho Interdisciplinar AEDS e Fundamentos da Engenharia de Software
-# -- Hotel bom descanso --
+# -- Hotel Bom Descanso --
  
 
 
