@@ -1,6 +1,9 @@
 # Trabalho Interdisciplinar AEDS e Fundamentos da Engenharia de Software
-# -- Hotel Bom Descanso --
+# -- Hotel Descanso Garantido --
  
+(C:\Users\joaom\OneDrive\Imagens\kanban1)
+(C:\Users\joaom\OneDrive\Imagens\kanban2)
+
 
 
 
