@@ -13,7 +13,7 @@
 
 
 # Apresentação 
-Esse é o software de gestão hoteleira "Descanso Garantido", o seu objetivo parte da ideia de facilitar a gestão de um hotel, uma vez que ele faz seus controles de estadias, clientes e funcionários em planilhas do
+Esse é o software de gestão hoteleira "Descanso Garantido", o seu objetivo parte da ideia de facilitar a gestão de um hotel, uma vez que ele fazia seus controles de estadias, clientes e funcionários em planilhas do
 excel e cadernos, o que tem gerado diversos problemas para a organização, sem falar que muitas vezes um mesmo quarto é reservado para mais de um cliente. Diante disso, nosso software, visando atender bem os clientes, permitirá o
 cadastro de clientes e funcionários, além de cadastrar e baixar estadias, e ainda permitir consultas. A importância do "Descanso Garantido" reside em sua capacidade de simplificar a administração do hotel, reduzindo a carga de trabalho manual, 
 aumentando a eficiência operacional e melhorando a experiência dos hóspedes.
